@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#00D388">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Andreazon</a>
+    <a class="navbar-brand" href="#">Andrezon</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,8 +37,24 @@
 
 <%=@products.count %> products and counting! Check back soon!
 <hr/>
+<%=image_tag(@products.first.image, size:"90x90")%>
 <strong><%=@products.first.name%></strong> costs $<%=@products.first.price%>
+<br>
+There are <%=@products.first.stock%> items in stock
+<br>
+Item description: <%=@products.first.description%>
 <hr/>
+<%=image_tag("paddingtonbear.jpg", size:"90x90")%>
 <strong><%=@products.second.name%></strong> costs $<%=@products.second.price%>
+<br>
+There are <%=@products.second.stock%> items in stock
+<br>
+Item description: <%=@products.second.description%>
 <hr/>
+<%=image_tag("pdb.jpg", size:"90x90")%>
 <strong><%=@products.third.name%></strong> costs $<%=@products.third.price%>
+<br>
+There are <%=@products.third.stock%> items in stock
+<br>
+Item description: <%=@products.third.description%>
+
