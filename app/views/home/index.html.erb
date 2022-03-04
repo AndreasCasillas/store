@@ -37,24 +37,18 @@
 
 <%=@products.count%> products and counting! Check back soon!
 <hr/>
-<%=image_tag(@products.first.image, size:"90x90")%>
-<strong><%=@products.first.name%></strong> costs $<%=@products.first.price%>
-<br>
-There are <%=@products.first.stock%> items in stock
-<br>
-Item description: <%=@products.first.description%>
-<hr/>
-<%=image_tag("paddingtonbear.jpg", size:"90x90")%>
-<strong><%=@products.second.name%></strong> costs $<%=@products.second.price%>
-<br>
-There are <%=@products.second.stock%> items in stock
-<br>
-Item description: <%=@products.second.description%>
-<hr/>
-<%=image_tag("pdb.jpg", size:"90x90")%>
-<strong><%=@products.third.name%></strong> costs $<%=@products.third.price%>
-<br>
-There are <%=@products.third.stock%> items in stock
-<br>
-Item description: <%=@products.third.description%>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%=product.name%>
+      costs $ <%=product.price%> 
+      <%=product.description%>
+      <%= image_tag product.image, size: "100x100" %>
+      <hr/>
+    </li>
+  <% end %>
+</ul>
+
+
+
 
