@@ -17,10 +17,10 @@
             Some Cool Links
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="https://intranet.usna.edu/">USNA</a></li>
+            <li><a class="dropdown-item" href="https://usna.edu/">USNA</a></li>
             <li><a class="dropdown-item" href="https://www.amazon.com/">My REAL ECommerce Store</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Mystery Link</a></li>
           </ul>
         </li>
         
@@ -36,6 +36,7 @@
 <div class="alert alert-warning" role="alert">Under Construction -- Coming Soon to a Internet Near You!</div>
 
 <%=@products.count%> products and counting! Check back soon!
+<h2> There are <%= @cart.length %> items in your trolley</h2>
 <hr/>
 <ul>
   <% @products.each do |product| %>
@@ -44,11 +45,12 @@
       costs $ <%=product.price%> 
       <%=product.description%>
       <%= image_tag product.image, size: "100x100" %>
+      <%= link_to "Purchase", buy_path(product), class: "btn btn-primary" %>
       <hr/>
     </li>
   <% end %>
 </ul>
 
-
+<a href="/checkout">Checkout Line</a>
 
 

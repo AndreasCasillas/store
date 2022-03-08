@@ -1,0 +1,9 @@
+<h2>Whats In Your Cart</h2>
+
+<ul>
+    <% @cart.each do |product| %>
+        <li> <%=product["name"]%> </li>
+    <% end %>
+</ul>
+
+<a href="/">I know you want more stuff</a>
