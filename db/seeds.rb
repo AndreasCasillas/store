@@ -13,20 +13,27 @@ Product.create([
         description: "A stuff teddy bear of Paddington",
         price: 30.00,
         image: "paddingtonbear.jpg",
-        stock: "1"
+        stock: "45"
     },
     {
         name: "Goop",
         description: "Goop! The goopiest goop you'll ever goop!",
         price: 1000000.00,
         image: "goop.jpg",
-        stock: "1"
+        stock: "99"
     },
     {
         name: "Pilsbury DoughBoy",
         description: "An 18in styrofoam statue of the DoughBoy himself",
         price: 10.00,
         image: "pdb.jpg",
-        stock: "1"
+        stock: "16"
+    },
+    {
+        name: "Dumb-Starbucks",
+        description: "It is not Starbucks coffee",
+        price: 5.00,
+        image: "dumbstarbucks.jpg",
+        stock: "25"
     }
 ])

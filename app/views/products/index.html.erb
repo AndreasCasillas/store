@@ -38,18 +38,18 @@
 <%=@products.count%> products and counting! Check back soon!
 <h2> There are <%= @cart.length %> items in your trolley</h2>
 <hr/>
-<ul>
+
   <% @products.each do |product| %>
-    <li>
-      <%=product.name%>
-      costs $ <%=product.price%> 
-      <%=product.description%>
-      <%= image_tag product.image, size: "100x100" %>
+      <div class="card" style="width: 18rem;">
+      <%= image_tag product.image, size: "130x130" %>
+      <div class="card-body">
+        <h5 class="card-title"><%=product.name%></h5>
+        <p class="card-text"><%=product.description%> <hr/> $<%=product.price%> <hr/> <%=product.stock%> in stock</p>
       <%= link_to "Purchase", buy_path(product), class: "btn btn-primary" %>
-      <hr/>
-    </li>
+      </div>
+      </div>
   <% end %>
-</ul>
+
 
 <a href="/checkout">Checkout Line</a>
 

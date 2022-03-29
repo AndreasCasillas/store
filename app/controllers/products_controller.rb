@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
       @products = Product.all
       @cart = session[:cart]
     end
+
+    def list 
+      @products = Product.all
+      render json: @products, only: [:id, :name, :price, :quantity]
+    end
   
     def buy 
       if session[:cart].nil?
@@ -21,6 +26,11 @@ class ProductsController < ApplicationController
     def checkout
       @cart = session[:cart]
       session[:cart] = []
+      @cart.each do |product|
+        p=Product.find(product["id"])
+        p.stock=p.stock-1
+        p.save
+      end
     end
 
 
