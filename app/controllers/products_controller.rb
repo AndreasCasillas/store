@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
     def list 
       @products = Product.all
-      render json: @products, only: [:id, :name, :price, :quantity]
+      render json: @products, only: [:id, :name, :price, :stock]
     end
   
     def buy 
